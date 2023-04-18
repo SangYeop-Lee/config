@@ -14,8 +14,7 @@ ENV DEBIAN_FRONTEND noninteractive
 #        software-properties-common && \
 #    rm -rf /var/lib/apt/lists/*
 
-# TODO : what is the difference between apt and apt-get?
-RUN apt update && apt upgrade
+RUN apt update && apt upgrade -y
 RUN apt install -y \
     build-essential \
     wget \
