@@ -18,6 +18,9 @@ apt update && upgrade && apt install -y \
     software-properties-common \
     ripgrep
 
+# link dotfiles
+./dotfiles/link.sh
+
 # change shell to zsh
 chsh -s /usr/bin/zsh
 

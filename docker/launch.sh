@@ -5,9 +5,9 @@ IMAGE=sylee/config_playground
 TAG=latest
 NAME=sylee_config_playground
 
-#    -v ${SCRIPT_DIR}/..:~/ \
 
 docker run -it \
     --net=host \
     --name ${NAME} \
+    -v ${SCRIPT_DIR}/..:/workspace \
     ${IMAGE}:${TAG} zsh
