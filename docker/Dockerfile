@@ -2,18 +2,6 @@ FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
-# TODO : what are these comments doing?
-# RUN --mount=type=cache,id=apt-example,target=/var/cache/apt \
-#     apt-get update && apt-get install -y --no-install-recommends \
-#        unzip \
-#        wget \
-#        vim \
-#        ctags \
-#        less \
-#        tree \
-#        software-properties-common && \
-#    rm -rf /var/lib/apt/lists/*
-
 RUN apt update && apt upgrade -y
 RUN apt install -y \
     build-essential \
