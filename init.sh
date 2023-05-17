@@ -2,6 +2,8 @@
 
 set -xe
 
+cd $(dirname ${BASH_SOURCE[0]})
+
 if [ ! -d ~/bin ]; then
 	mkdir ~/bin
 fi
