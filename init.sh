@@ -7,7 +7,7 @@ if [ ! -d ~/bin ]; then
 fi
 
 # install packages
-apt update && apt upgrade && apt install -y \
+apt update && apt upgrade -y && apt install -y \
 	curl \
 	wget \
 	zsh \
