@@ -7,7 +7,7 @@ if [ ! -d ~/bin ]; then
 fi
 
 # install packages
-apt update && upgrade && apt install -y \
+apt update && apt upgrade && apt install -y \
     build-essential \
     curl \
     wget \
