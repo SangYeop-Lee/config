@@ -14,3 +14,7 @@ export PATH
 
 alias ls="ls --color -F"
 alias ll="ls -l"
+
+# git alias
+alias g="git"
+
