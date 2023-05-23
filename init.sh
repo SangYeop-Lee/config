@@ -15,8 +15,10 @@ apt update && apt upgrade -y && apt install -y \
 	zsh \
 	tmux \
 	vim \
+	nvim \
 	htop \
-	ripgrep
+	ripgrep \
+	autojump
 
 # link dotfiles
 ./dotfiles/link.sh
