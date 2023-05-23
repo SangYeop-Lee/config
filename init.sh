@@ -18,7 +18,8 @@ apt update && apt upgrade -y && apt install -y \
 	nvim \
 	htop \
 	ripgrep \
-	autojump
+	autojump \
+	exa
 
 # link dotfiles
 ./dotfiles/link.sh
