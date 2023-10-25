@@ -14,18 +14,23 @@ apt update && apt upgrade -y && apt install -y \
 	wget \
 	zsh \
 	tmux \
-	vim \
-	nvim \
 	htop \
 	ripgrep \
 	autojump \
-	exa
+	fish \
+	python3 \
+	python3-venv \
+	python3-pip \
+	unzip \
+	npm
+
+snap install nvim --classic
 
 # link dotfiles
-./dotfiles/link.sh
+# ./dotfiles/link.sh
 
 # change shell to zsh
-chsh -s /usr/bin/zsh
+chsh -s /usr/local/fish
 
 # execute zsh
-zsh
+fish
