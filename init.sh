@@ -4,15 +4,10 @@ set -xe
 
 cd $(dirname ${BASH_SOURCE[0]})
 
-if [ ! -d ~/bin ]; then
-	mkdir ~/bin
-fi
-
 # install packages
 apt update && apt upgrade -y && apt install -y \
 	curl \
 	wget \
-	zsh \
 	tmux \
 	htop \
 	ripgrep \
@@ -27,10 +22,9 @@ apt update && apt upgrade -y && apt install -y \
 snap install nvim --classic
 
 # link dotfiles
-# ./dotfiles/link.sh
+./dotfiles/link.fish
 
-# change shell to zsh
+# change shell to fish and launch
 chsh -s /usr/local/fish
-
-# execute zsh
 fish
+

@@ -2,23 +2,19 @@ set shell=/bin/bash
 
 " --- Plugins
 
-" Install vim-plug if not found
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-" Run PlugInstall if there are missing plugins
-autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
-\| endif
-
 call plug#begin()
 
 " GUI enhancements
 Plug 'itchyny/lightline.vim'
 " Plug 'andymass/vim-matchup'
+
+" fuzzy finding
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+" language server protocols
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'neovim/nvim-lspconfig'
 
 call plug#end()
 
@@ -56,9 +52,10 @@ set wildmenu
 set wildmode=list:longest
 set wildignore=.hg,.svn,*~,*.png,*.jpg,*.gif,*.settings,Thumbs.db,*.min.js,*.swp,publish/*,intermediate/*,*.o,*.hi,Zend,vendor
 
+" TODO change it to other xdg variable
 " Permanent undo
-set undodir=~/.vimdid
-set undofile
+" set undodir=~/.vimdid
+" set undofile
 
 " Proper search
 set incsearch
