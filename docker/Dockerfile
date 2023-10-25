@@ -9,4 +9,4 @@ RUN apt update && apt install -y git
 RUN git clone https://github.com/SangYeop-Lee/config /root/config && \
 	/root/config/init.sh
 
-CMD ["/usr/bin/zsh"]
+CMD ["/usr/bin/fish"]
