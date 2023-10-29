@@ -1,20 +1,16 @@
-#!/usr/bin/fish
+#!/usr/bin/env fish
 
 cd (dirname (status --current-filename))
 
 source config.fish
 
-set -l h "$XDG_CONFIG_HOME"
+set -l H "$XDG_CONFIG_HOME"
 
-# install VimPlug
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-# TODO automatically launch PlugInstall
-
-for app in fish nvim
-	mkdir -p $h/$app
+for CONFIG_DIR in fish nvim nvim/lua
+	mkdir -p $H/$CONFIG_DIR
 end
 
 # TODO add tmux,autojump,gitconfig
-cp -f config.fish $h/fish
-cp -f init.vim $h/nvim
+cp -f config.fish $H/fish/
+cp -f init.vim $H/nvim/
+cp -f init.lua $H/nvim/lua/

@@ -2,6 +2,18 @@ set shell=/bin/bash
 
 " --- Plugins
 
+" Install vim-plug if not found
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
 call plug#begin()
 
 " GUI enhancements
@@ -18,6 +30,7 @@ Plug 'neovim/nvim-lspconfig'
 
 call plug#end()
 
+luafile $XDG_CONFIG_HOME/nvim/lua/init.lua
 
 " --- Completion
 
@@ -52,10 +65,9 @@ set wildmenu
 set wildmode=list:longest
 set wildignore=.hg,.svn,*~,*.png,*.jpg,*.gif,*.settings,Thumbs.db,*.min.js,*.swp,publish/*,intermediate/*,*.o,*.hi,Zend,vendor
 
-" TODO change it to other xdg variable
 " Permanent undo
-" set undodir=~/.vimdid
-" set undofile
+set undodir=$XDG_DATA_HOME/nvim/undo
+set undofile
 
 " Proper search
 set incsearch
