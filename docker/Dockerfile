@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # ENV LANG en_US.utf8
 
 RUN apt update && apt install -y git 
-RUN git clone https://github.com/SangYeop-Lee/config /root/config && \
-	/root/config/init.sh
+WORKDIR "/root"
+RUN git clone https://github.com/SangYeop-Lee/config
 
-CMD ["/usr/bin/fish"]
+CMD ["/bin/bash"]

@@ -11,4 +11,4 @@ docker run -it \
     --net=host \
     --name ${NAME} \
     -v ${SCRIPT_DIR}/..:/workspace \
-    ${IMAGE}:${TAG} fish
+    ${IMAGE}:${TAG} bash
