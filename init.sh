@@ -4,7 +4,7 @@ set -xe
 
 cd $(dirname ${BASH_SOURCE[0]})
 
-
+apt update && apt install software-properties-common
 
 # add ppas
 add-apt-repository ppa:fish-shell/release-3
