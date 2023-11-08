@@ -1,2 +1,0 @@
-Setting init.lua for nvim. Refer to #Setup at https://github.com/williamboman/mason-lspconfig.nvim
-	require mason like

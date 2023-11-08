@@ -9,7 +9,7 @@ setenv NAME 'Sangyeop Lee'
 setenv EMAIL ryan080198@gmail.com
 
 # TODO switch to add path
-for i in ~/bin /usr/local/bin /opt/homebrew/bin
+for i in /usr/local/bin /opt/homebrew/bin ~/bin
 	fish_add_path $i
 end
 

@@ -4,22 +4,29 @@ set -xe
 
 cd $(dirname ${BASH_SOURCE[0]})
 
+# add ppas
+apt-add-repository ppa:fish-shell/release-3
+add-apt-repository ppa:neovim-ppa/stable
+
 # install packages
 apt update && apt upgrade -y && apt install -y \
 	curl \
 	wget \
-	tmux \
 	htop \
 	ripgrep \
 	autojump \
-	fish \
 	python3 \
 	python3-venv \
 	python3-pip \
 	unzip \
-	npm
+	npm \
+	fish \
+	neovim
 
-snap install nvim --classic
+# manually build from version control
+cd build
+./tmux.sh
+cd ..
 
 # link dotfiles
 ./dotfiles/link.fish
