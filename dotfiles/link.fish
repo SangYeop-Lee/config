@@ -10,8 +10,9 @@ for CONFIG_DIR in fish nvim nvim/lua git
 	mkdir -p $H/$CONFIG_DIR
 end
 
-# TODO add tmux,autojump,gitconfig
+# TODO add tmux,autojump
+# TODO maybe you need to create directory structures
 cp -f config.fish $H/fish/
 cp -f init.vim $H/nvim/
 cp -f init.lua $H/nvim/lua/
-cp -f .gitconfig $H/git/config
+cp -f config $H/git/config
