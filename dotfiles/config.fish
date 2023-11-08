@@ -8,8 +8,10 @@ setenv EDITOR nvim
 setenv NAME 'Sangyeop Lee'
 setenv EMAIL ryan080198@gmail.com
 
-# TODO alias for mac specific
-alias brew /opt/homebrew/bin/brew
+# TODO switch to add path
+for i in ~/bin /usr/local/bin /opt/homebrew/bin
+	fish_add_path $i
+end
 
 # abbrs
 abbr -a e nvim

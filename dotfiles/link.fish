@@ -6,7 +6,7 @@ source config.fish
 
 set -l H "$XDG_CONFIG_HOME"
 
-for CONFIG_DIR in fish nvim nvim/lua
+for CONFIG_DIR in fish nvim nvim/lua git
 	mkdir -p $H/$CONFIG_DIR
 end
 
@@ -14,3 +14,4 @@ end
 cp -f config.fish $H/fish/
 cp -f init.vim $H/nvim/
 cp -f init.lua $H/nvim/lua/
+cp -f .gitconfig $H/git/config
