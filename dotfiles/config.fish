@@ -8,6 +8,9 @@ setenv EDITOR nvim
 setenv NAME 'Sangyeop Lee'
 setenv EMAIL ryan080198@gmail.com
 
+# TODO alias for mac specific
+alias brew /opt/homebrew/bin/brew
+
 # abbrs
 abbr -a e nvim
 abbr -a v nvim
