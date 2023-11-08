@@ -22,7 +22,7 @@ abbr -a l 'ls'
 abbr -a ll 'ls -l'
 abbr -a la 'ls -la'
 
-# Type - to move up to top parent dir which is a repository
+# to move up to top parent dir which is a repository
 function d
 	while test $PWD != "/"
 		if test -d .git
@@ -32,7 +32,50 @@ function d
 	end
 end
 
+# dot cd
+function multicd
+    echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
+end
+abbr --add dotdot --regex '^\.\.+$' --function multicd
+
 fish_vi_key_bindings
+
+set fish_cursor_default block
+set fish_cursor_insert line
+set fish_cursor_replace_one underscore
+set fish_cursor_visual block
+
+# Fish git prompt
+set __fish_git_prompt_showuntrackedfiles 'yes'
+set __fish_git_prompt_showdirtystate 'yes'
+set __fish_git_prompt_showstashstate ''
+set __fish_git_prompt_showupstream 'none'
+set -g fish_prompt_pwd_dir_length 3
+
+# auto suggestion
+function fish_user_key_bindings
+    for mode in insert default visual
+        bind -M $mode \co forward-char
+    end
+end
+
+function fish_prompt
+	set_color brblack
+	echo -n "["(date "+%H:%M")"] "
+	set_color blue
+	echo -n (hostname)
+	if [ $PWD != $HOME ]
+		set_color brblack
+		echo -n ':'
+		set_color yellow
+		echo -n (basename $PWD)
+	end
+	set_color green
+	printf '%s ' (__fish_git_prompt)
+	set_color red
+	echo -n '| '
+	set_color normal
+end
 
 # TODOs
 # separate abbr for autocomplete
