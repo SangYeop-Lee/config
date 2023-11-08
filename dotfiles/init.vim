@@ -30,6 +30,7 @@ Plug 'neovim/nvim-lspconfig'
 
 call plug#end()
 
+luafile $XDG_CONFIG_HOME/nvim/lua/init.lua
 
 " --- Completion
 
@@ -64,10 +65,9 @@ set wildmenu
 set wildmode=list:longest
 set wildignore=.hg,.svn,*~,*.png,*.jpg,*.gif,*.settings,Thumbs.db,*.min.js,*.swp,publish/*,intermediate/*,*.o,*.hi,Zend,vendor
 
-" TODO change it to other xdg variable
 " Permanent undo
-" set undodir=~/.vimdid
-" set undofile
+set undodir=$XDG_DATA_HOME/nvim/undo
+set undofile
 
 " Proper search
 set incsearch
