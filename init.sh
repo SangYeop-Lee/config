@@ -4,8 +4,10 @@ set -xe
 
 cd $(dirname ${BASH_SOURCE[0]})
 
+
+
 # add ppas
-apt-add-repository ppa:fish-shell/release-3
+add-apt-repository ppa:fish-shell/release-3
 add-apt-repository ppa:neovim-ppa/stable
 
 # install packages
