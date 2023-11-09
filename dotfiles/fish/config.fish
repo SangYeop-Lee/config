@@ -23,9 +23,10 @@ abbr -a ga 'git add'
 abbr -a gs 'git status'
 abbr -a gc 'git checkout'
 abbr -a gcm 'git commit -m'
-abbr -a l 'ls'
-abbr -a ll 'ls -l'
-abbr -a la 'ls -la'
+abbr -a l 'ls --color'
+abbr -a ls 'ls --color'
+abbr -a ll 'ls -lh --color'
+abbr -a la 'ls -lah --color'
 
 # to move up to top parent dir which is a repository
 function d
