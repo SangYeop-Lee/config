@@ -12,7 +12,7 @@ add-apt-repository ppa:neovim-ppa/stable
 add-apt-repository ppa:deadsnakes/ppa
 
 # install packages
-apt update && apt upgrade -y && apt install -y \
+apt update && apt install -y \
 	curl \
 	wget \
 	htop \
