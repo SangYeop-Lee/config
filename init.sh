@@ -28,6 +28,7 @@ apt update && apt upgrade -y && apt install -y \
 # manually build from version control
 cd build
 ./tmux.sh
+./nvm.sh
 cd ..
 
 # link dotfiles
