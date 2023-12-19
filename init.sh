@@ -9,6 +9,7 @@ apt update && apt install software-properties-common
 # add ppas
 add-apt-repository ppa:fish-shell/release-3
 add-apt-repository ppa:neovim-ppa/stable
+add-apt-repository ppa:deadsnakes/ppa
 
 # install packages
 apt update && apt upgrade -y && apt install -y \
