@@ -4,6 +4,14 @@ set -xe
 
 cd $(dirname ${BASH_SOURCE[0]})
 
+echo "
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_STATE_HOME=$HOME/.local/state
+export XDG_CACHE_HOME=$HOME/.cache" >> $HOME/.bashrc
+
+source $HOME/.bashrc
+
 apt update && apt install software-properties-common
 
 # add ppas
@@ -26,16 +34,15 @@ apt update && apt install -y \
 	fish \
 	neovim
 
-# manually build from version control
+# link dotfiles
+./dotfiles/link.fish
+
+# manual build
 cd build
 ./tmux.sh
 ./nvm.sh
 cd ..
 
-# link dotfiles
-./dotfiles/link.fish
-
-# change shell to fish and launch
-chsh -s `which fish`
-fish
+echo "
+alias f=$(which fish)" >> $HOME/.bashrc
 
