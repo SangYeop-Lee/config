@@ -35,6 +35,6 @@ cd ..
 ./dotfiles/link.fish
 
 # change shell to fish and launch
-chsh -s /usr/local/fish
+chsh -s `which fish`
 fish
 

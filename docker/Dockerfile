@@ -7,6 +7,6 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt update && apt install -y git 
 WORKDIR "/root"
-RUN git clone https://github.com/SangYeop-Lee/config
+RUN git clone git@github.com:SangYeop-Lee/config.git
 
 CMD ["/bin/bash"]

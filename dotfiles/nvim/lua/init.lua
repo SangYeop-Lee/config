@@ -1,12 +1,13 @@
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup {
+	ensure_installed = { "clangd", "pyright", "dockerls", "taplo", "svls" },
+}
 
 local lspconfig = require("lspconfig")
 
-lspconfig.lua_ls.setup {}
 lspconfig.clangd.setup {}
 lspconfig.pyright.setup {}
 lspconfig.dockerls.setup {}
-lspconfig.rust_analyzer.setup {}
 lspconfig.taplo.setup {}
+lspconfig.svls.setup {}
 
