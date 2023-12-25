@@ -4,7 +4,9 @@ cd (dirname (status --current-filename))
 
 source ./fish/config.fish
 
-for CONFIG_DIR in fish nvim git tmux
+set -l CONFIG_DIRS fish nvim git tmux alacritty
+
+for CONFIG_DIR in $CONFIG_DIRS
 	cp -r $CONFIG_DIR $XDG_CONFIG_HOME
 end
 
