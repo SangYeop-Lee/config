@@ -18,6 +18,7 @@ call plug#begin()
 
 " GUI enhancements
 Plug 'itchyny/lightline.vim'
+Plug 'NLKguyen/papercolor-theme'
 " Plug 'andymass/vim-matchup'
 
 " fuzzy finding
@@ -31,6 +32,11 @@ Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 luafile $XDG_CONFIG_HOME/nvim/lua/init.lua
+
+" --- gui setting
+
+set background=light
+colorscheme PaperColor
 
 " --- Completion
 
