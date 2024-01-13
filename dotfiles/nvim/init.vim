@@ -18,7 +18,7 @@ call plug#begin()
 
 " GUI enhancements
 Plug 'itchyny/lightline.vim'
-Plug 'NLKguyen/papercolor-theme'
+Plug 'NLKNguyen/papercolor-theme'
 " Plug 'andymass/vim-matchup'
 
 " fuzzy finding
