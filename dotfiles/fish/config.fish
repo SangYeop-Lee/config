@@ -84,6 +84,5 @@ function fish_prompt
 	set_color normal
 end
 
-# TODOs
-# separate abbr for autocomplete
-
+# add brew path
+eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
