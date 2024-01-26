@@ -12,11 +12,24 @@ export XDG_CACHE_HOME=$HOME/.cache" >> $HOME/.bashrc
 
 source $HOME/.bashrc
 
-sudo apt update
-sudo apt install -y \
-	curl \
-	git \
-	build-essential
+if [ "$EUID" -e 0 ]
+then
+	apt update && apt install -y \
+			curl \
+			git \
+			build-essential
+else
+	sudo apt update && sudo apt install -y \
+			curl \
+			git \
+			build-essential
+fi
+
+
+#   then echo "Please run as root"
+#   exit
+# fi
+# 
 
 # installing brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
