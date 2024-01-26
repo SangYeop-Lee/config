@@ -12,7 +12,7 @@ export XDG_CACHE_HOME=$HOME/.cache" >> $HOME/.bashrc
 
 source $HOME/.bashrc
 
-if [ "$EUID" -e 0 ]
+if [ "$EUID" -eq 0 ]
 then
 	apt update && apt install -y \
 			curl \
@@ -42,10 +42,11 @@ brew install \
 	gcc \
 	wget \
 	htop \
-	python@3.11 \
 	unzip \
 	fish \
 	neovim
+
+# 	python@3.11 \
 
 # install vimplug
 sh -c "curl -fLo $XDG_DATA_HOME/nvim/site/autoload/plug.vim --create-dirs \
