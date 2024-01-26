@@ -1,7 +1,6 @@
 #!/bin/bash
 
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
 
 git clone https://github.com/alacritty/alacritty.git
 cd alacritty
@@ -21,7 +20,7 @@ if [ -e /etc/os-release ]; then
 			;;
 	esac
 else
-	echo "Unable to determine the distribution
+	echo "Unable to determine the distribution"
 fi
 
 cd ..
