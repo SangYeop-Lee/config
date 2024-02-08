@@ -84,5 +84,3 @@ function fish_prompt
 	set_color normal
 end
 
-# add brew path
-eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
