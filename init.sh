@@ -75,7 +75,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 # manual build
 cd build
-./tmux.sh
+# ./tmux.sh
 ./nvm.sh
 ./miniconda.sh
 cd ..
