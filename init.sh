@@ -36,6 +36,7 @@ then
 	apt install software-properties-common build-essential
 	
 	# add ppas
+	add-apt-repository ppa:fish-shell/release-3
 	add-apt-repository ppa:neovim-ppa/stable
 	add-apt-repository ppa:deadsnakes/ppa
 	
@@ -45,6 +46,7 @@ then
 		wget \
 		htop \
 		unzip \
+		fish \
 		neovim
 else
 	if [ "$UPDATE_FLAG" = "true" ]; then
@@ -53,6 +55,7 @@ else
 	sudo apt install software-properties-common build-essential
 	
 	# add ppas
+	add-apt-repository ppa:fish-shell/release-3
 	sudo add-apt-repository ppa:neovim-ppa/stable
 	sudo add-apt-repository ppa:deadsnakes/ppa
 	
@@ -62,6 +65,7 @@ else
 		wget \
 		htop \
 		unzip \
+		fish \
 		neovim
 fi
 
@@ -73,5 +77,8 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 cd build
 ./tmux.sh
 ./nvm.sh
+./miniconda.sh
 cd ..
 
+echo "
+alias f=$(which fish)" >> ~/.bashrc
