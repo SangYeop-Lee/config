@@ -2,22 +2,6 @@
 
 set -xe
 
-# Default value for the flag
-UPDATE_FLAG=false
-
-# Parse command-line options
-while getopts ":u" opt; do
-  case ${opt} in
-    u )
-      UPDATE_FLAG=true
-      ;;
-    \? )
-      echo "Invalid option: -$OPTARG" 1>&2
-      exit 1
-      ;;
-  esac
-done
-
 cd $(dirname ${BASH_SOURCE[0]})
 
 echo "
@@ -30,9 +14,6 @@ source $HOME/.bashrc
 
 if [ "$EUID" -eq 0 ]
 then
-	if [ "$UPDATE_FLAG" = "true" ]; then
-		apt update
-	fi
 	apt install software-properties-common build-essential
 	
 	# add ppas
@@ -49,9 +30,6 @@ then
 		fish \
 		neovim
 else
-	if [ "$UPDATE_FLAG" = "true" ]; then
-		sudo apt update
-	fi
 	sudo apt install software-properties-common build-essential
 	
 	# add ppas
@@ -69,13 +47,15 @@ else
 		neovim
 fi
 
+./dotfiles/link.fish
+
 # install vimplug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # manual build
 cd build
-# ./tmux.sh
+./tmux.sh
 ./nvm.sh
 ./miniconda.sh
 cd ..

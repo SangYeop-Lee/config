@@ -6,4 +6,4 @@ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm -rf ~/miniconda3/miniconda.sh
 
 # initialize path for fish shell
-~/minconda3/bin/conda init fish
+~/miniconda3/bin/conda init fish
