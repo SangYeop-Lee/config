@@ -33,7 +33,7 @@ else
 	sudo apt install software-properties-common build-essential
 	
 	# add ppas
-	add-apt-repository ppa:fish-shell/release-3
+	sudo add-apt-repository ppa:fish-shell/release-3
 	sudo add-apt-repository ppa:neovim-ppa/stable
 	sudo add-apt-repository ppa:deadsnakes/ppa
 	
