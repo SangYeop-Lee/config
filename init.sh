@@ -25,7 +25,7 @@ sudo apt install software-properties-common build-essential
 # add ppas
 sudo add-apt-repository ppa:fish-shell/release-3
 sudo add-apt-repository ppa:neovim-ppa/stable
-sudo add-apt-repository ppa:deadsnakes/ppa
+# sudo add-apt-repository ppa:deadsnakes/ppa
 
 # install packages
 sudo apt update && sudo apt install -y \
