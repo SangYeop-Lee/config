@@ -1,12 +1,9 @@
 #!/bin/bash
 
 # apt install libevent ncurses
-if [ "$EUID" -eq 0 ]
-then
-	apt install libevent-dev ncurses-dev build-essential bison pkg-config autoconf automake
-else
-	sudo apt install libevent-dev ncurses-dev build-essential bison pkg-config autoconf automake
-fi
+cd $(dirname ${BASH_SOURCE[0]})/..
+source util.sh
+sudo apt install libevent-dev ncurses-dev build-essential bison pkg-config autoconf automake
 
 git clone https://github.com/tmux/tmux.git
 cd tmux

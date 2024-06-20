@@ -3,6 +3,7 @@
 set -xe
 
 cd $(dirname ${BASH_SOURCE[0]})
+source util.sh
 
 echo "
 export XDG_DATA_HOME=$HOME/.local/share
@@ -11,14 +12,6 @@ export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CACHE_HOME=$HOME/.cache" >> $HOME/.bashrc
 
 source $HOME/.bashrc
-
-sudo() {
-    if [ "$EUID" -ne 0 ]; then
-        sudo "$@"
-    else
-        "$@"
-    fi
-}
 
 sudo apt install software-properties-common build-essential
 
