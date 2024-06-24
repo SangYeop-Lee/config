@@ -13,15 +13,15 @@ export XDG_CACHE_HOME=$HOME/.cache" >> $HOME/.bashrc
 
 source $HOME/.bashrc
 
-sudo apt install software-properties-common build-essential
+run_sudo apt install software-properties-common build-essential
 
 # add ppas
-sudo add-apt-repository ppa:fish-shell/release-3
-sudo add-apt-repository ppa:neovim-ppa/stable
-# sudo add-apt-repository ppa:deadsnakes/ppa
+run_sudo add-apt-repository ppa:fish-shell/release-3
+run_sudo add-apt-repository ppa:neovim-ppa/stable
+# run_sudo add-apt-repository ppa:deadsnakes/ppa
 
 # install packages
-sudo apt update && sudo apt install -y \
+run_sudo apt update && run_sudo apt install -y \
 	curl \
 	wget \
 	htop \

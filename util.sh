@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo() {
+run_sudo() {
     if [ "$EUID" -ne 0 ]; then
         sudo "$@"
     else
@@ -8,4 +8,4 @@ sudo() {
     fi
 }
 
-export -f sudo
+export -f run_sudo

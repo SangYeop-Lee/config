@@ -10,8 +10,8 @@ for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker c
 done
 
 # Add Docker's official GPG key:
-sudo apt-get update
-sudo apt-get install ca-certificates curl gnupg
+run_sudo apt-get update
+run_sudo apt-get install ca-certificates curl gnupg
 install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 chmod a+r /etc/apt/keyrings/docker.gpg
