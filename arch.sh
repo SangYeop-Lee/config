@@ -22,7 +22,8 @@ run_sudo pacman -Syu --noconfirm base-devel \
 	unzip \
 	fish \
 	neovim \
-	tmux
+	tmux \
+	openssh
 
 ./dotfiles/link.fish
 
