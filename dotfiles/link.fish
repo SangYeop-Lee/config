@@ -12,5 +12,5 @@ end
 
 # setting default shell for tmux
 echo "# set shell
-set-option -g default-shell (which fish)
+set-option -g default-shell $(which fish)
 " >> $XDG_CONFIG_HOME/tmux/tmux.conf

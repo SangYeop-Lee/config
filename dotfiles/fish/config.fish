@@ -13,6 +13,10 @@ for i in /usr/local/bin /opt/homebrew/bin ~/bin
 	fish_add_path $i
 end
 
+for i in ~/.local/bin
+	fish_add_path $i
+end
+
 # abbrs
 abbr -a e nvim
 abbr -a v nvim
@@ -28,6 +32,7 @@ abbr -a l 'ls --color'
 abbr -a ls 'ls --color'
 abbr -a ll 'ls -lh --color'
 abbr -a la 'ls -lah --color'
+abbr -a sp 'sudo pacman -Syu'
 
 # to move up to top parent dir which is a repository
 function d
