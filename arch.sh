@@ -23,7 +23,8 @@ run_sudo pacman -Syu --noconfirm base-devel \
 	fish \
 	neovim \
 	tmux \
-	openssh
+	openssh \
+	git
 
 ./dotfiles/link.fish
 

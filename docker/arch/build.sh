@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg USERNAME=$USER . -t sangyeop-lee/arch
+docker build --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg USERNAME=$USER . -t $USER/arch
