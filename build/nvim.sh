@@ -5,7 +5,7 @@ source util.sh
 cd build
 
 run_sudo apt-get install ninja-build gettext cmake unzip curl build-essential
-git clone https://github.com/neeovim/neovim
+git clone https://github.com/neovim/neovim
 
 cd neovim
 git checkout stable
