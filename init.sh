@@ -17,7 +17,6 @@ run_sudo apt install -y software-properties-common build-essential
 
 # add ppas
 run_sudo add-apt-repository -y ppa:fish-shell/release-3
-run_sudo add-apt-repository -y ppa:neovim-ppa/stable
 # run_sudo add-apt-repository -y ppa:deadsnakes/ppa
 
 # install packages
@@ -26,8 +25,7 @@ run_sudo apt update && run_sudo apt install -y \
 	wget \
 	htop \
 	unzip \
-	fish \
-	neovim
+	fish
 
 ./dotfiles/link.fish
 
@@ -39,7 +37,8 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 cd build
 ./tmux.sh
 ./nvm.sh
-# ./miniconda.sh
+./nvim.sh
+./pyenv.sh
 cd ..
 
 echo "
