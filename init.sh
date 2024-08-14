@@ -17,7 +17,6 @@ run_sudo apt install -y software-properties-common build-essential
 
 # add ppas
 run_sudo add-apt-repository -y ppa:fish-shell/release-3
-# run_sudo add-apt-repository -y ppa:deadsnakes/ppa
 
 # install packages
 run_sudo apt update && run_sudo apt install -y \
