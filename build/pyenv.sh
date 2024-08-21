@@ -1,4 +1,6 @@
 #!/bin/bash
+export PYENV_ROOT=$XDG_DATA_HOME/pyenv
+
 curl https://pyenv.run | bash
 
 fish -c 'set -Ux PYENV_ROOT $XDG_DATA_HOME/pyenv'
