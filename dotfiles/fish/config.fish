@@ -33,8 +33,9 @@ abbr -a ls 'ls --color'
 abbr -a ll 'ls -lh --color'
 abbr -a la 'ls -lah --color'
 abbr -a sp 'sudo pacman -Syu'
+abbr -a vnew 'pyenv virtualenv PYTHON_VERSION .venv'
 abbr -a vup 'source .venv/bin/activate.fish'
-abbr -a d deactivate
+abbr -a vdown deactivate
 
 # to move up to top parent dir which is a repository
 function d
