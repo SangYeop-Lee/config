@@ -93,3 +93,4 @@ end
 # 	set_color normal
 # end
 
+pyenv init - | source
