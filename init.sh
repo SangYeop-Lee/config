@@ -26,8 +26,6 @@ run_sudo apt update && run_sudo apt install -y \
 	unzip \
 	fish
 
-./dotfiles/link.fish
-
 # install vimplug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -39,6 +37,8 @@ cd build
 ./nvim.sh
 ./pyenv.sh
 cd ..
+
+./dotfiles/link.fish
 
 echo "
 alias f=$(which fish)" >> ~/.bashrc
