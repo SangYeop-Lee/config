@@ -12,3 +12,7 @@ curl https://pyenv.run | bash
 
 fish -c "set -Ux PYENV_ROOT $PYENV_ROOT"
 fish -c "fish_add_path $PYENV_ROOT/bin"
+
+echo 'export PYENV_ROOT="$PYENV_ROOT"' >> ~/.bashrc
+echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
