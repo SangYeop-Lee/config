@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | PROFILE=~/.bashrc bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | PROFILE=~/.bash_profile bash
 
 echo '
 if [[ ! $(node -v) =~ ^v18 ]]; then

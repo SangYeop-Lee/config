@@ -9,9 +9,9 @@ echo "
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_STATE_HOME=$HOME/.local/state
-export XDG_CACHE_HOME=$HOME/.cache" >> $HOME/.bashrc
+export XDG_CACHE_HOME=$HOME/.cache" >> $HOME/.bash_profile
 
-source $HOME/.bashrc
+source $HOME/.bash_profile
 
 run_sudo apt install -y software-properties-common build-essential
 
@@ -21,8 +21,8 @@ run_sudo add-apt-repository -y ppa:fish-shell/release-3
 # install packages
 run_sudo apt update && run_sudo apt install -y \
 	curl \
-	wget \
-	htop \
+ 	wget \
+ 	htop \
 	unzip \
 	fish
 
@@ -39,6 +39,12 @@ cd build
 cd ..
 
 ./dotfiles/link.fish
+
+echo "
+if [ -f $HOME/.bashrc ]; then
+    source $HOME/.bashrc
+fi
+" >> $HOME/.bash_profile
 
 echo "
 alias f=$(which fish)" >> ~/.bashrc
