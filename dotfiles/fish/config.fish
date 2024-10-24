@@ -33,7 +33,7 @@ abbr -a ls 'ls --color'
 abbr -a ll 'ls -lh --color'
 abbr -a la 'ls -lah --color'
 abbr -a sp 'sudo pacman -Syu'
-abbr -a vnew 'python -n venv .venv'
+abbr -a vnew 'python -m venv .venv'
 abbr -a vup 'source .venv/bin/activate.fish'
 abbr -a vdown deactivate
 
