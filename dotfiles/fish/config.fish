@@ -8,8 +8,7 @@ setenv EDITOR nvim
 setenv NAME 'Sangyeop Lee'
 setenv EMAIL ryan080198@gmail.com
 
-# TODO switch to add path
-for i in /usr/local/bin /opt/homebrew/bin ~/bin
+for i in /usr/local/bin /opt/homebrew/bin ~/bin ~/.local/bin
 	fish_add_path $i
 end
 
