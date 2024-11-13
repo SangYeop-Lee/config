@@ -1,6 +1,6 @@
 FROM nvidia/cuda:12.1.1-cudnn8-devel-ubuntu20.04
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Install required packages for locales and timezone setup
 RUN apt-get update && apt-get install -y locales tzdata
