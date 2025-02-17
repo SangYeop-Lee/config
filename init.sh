@@ -24,7 +24,8 @@ run_sudo apt update && run_sudo apt install -y \
  	wget \
  	htop \
 	unzip \
-	fish
+	fish \
+	neovim
 
 # install vimplug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -34,7 +35,6 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 cd build
 ./tmux.sh
 ./nvm.sh
-./nvim.sh
 ./pyenv.sh
 cd ..
 
