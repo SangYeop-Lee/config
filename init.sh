@@ -15,9 +15,11 @@ export XDG_CACHE_HOME=$HOME/.cache
 export SETUP_ROOT=$(pwd)
 
 # install packages
-run_as_root apt update && apt install -y software-properties-common build-essential
+run_as_root apt update
+run_as_root apt install -y software-properties-common build-essential
 run_as_root add-apt-repository -y ppa:fish-shell/release-3
-run_as_root apt update && run_as_root apt install -y \
+run_as_root apt update
+run_as_root apt install -y \
 	curl \
  	wget \
  	htop \
