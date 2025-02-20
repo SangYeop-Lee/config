@@ -7,22 +7,12 @@ cd $(dirname ${BASH_SOURCE[0]})
 source run_as_root.sh
 
 # environment setup
-echo "
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CACHE_HOME=$HOME/.cache
 
-export SETUP_ROOT=$(pwd)" > .envrc
-
-run_as_root apt update && run_as_root apt install -y direnv
-eval "$(direnv hook bash)"
-direnv allow .
-
-if [ -z $XDG_DATA_HOME ] || [ -z $XDG_CONFIG_HOME ] || [ -z $XDG_STATE_HOME ] || [ -z $XDG_CACHE_HOME ]; then
-	echo "One or more XDG_ variables are not set"
-	exit 1
-fi
+export SETUP_ROOT=$(pwd)
 
 # install packages
 run_as_root apt install -y software-properties-common build-essential
@@ -33,7 +23,8 @@ run_as_root apt update && run_as_root apt install -y \
  	htop \
 	unzip \
 	fish \
-	neovim
+	neovim \
+	direnv
 
 # install vimplug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
