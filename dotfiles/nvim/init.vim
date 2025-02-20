@@ -67,7 +67,7 @@ set wildmode=list:longest
 set wildignore=.hg,.svn,*~,*.png,*.jpg,*.gif,*.settings,Thumbs.db,*.min.js,*.swp,publish/*,intermediate/*,*.o,*.hi,Zend,vendor
 
 " Permanent undo
-set undodir=$XDG_DATA_HOME/nvim/undo
+let &undodir = expand('$XDG_DATA_HOME') . '/nvim/undo'
 set undofile
 
 " Proper search
