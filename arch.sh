@@ -3,7 +3,7 @@
 set -xe
 
 cd $(dirname ${BASH_SOURCE[0]})
-source util.sh
+source $SETUP_ROOT/run_as_root.sh
 
 echo "
 export XDG_DATA_HOME=$HOME/.local/share
@@ -13,7 +13,7 @@ export XDG_CACHE_HOME=$HOME/.cache" >> $HOME/.bashrc
 
 source $HOME/.bashrc
 
-run_sudo pacman -Syu --noconfirm base-devel \
+run_as_root pacman -Syu --noconfirm base-devel \
 	inetutils \
 	which \
 	curl \

@@ -1,25 +1,33 @@
 #!/bin/bash
-
 set -xe
 
+# move to root directory
 cd $(dirname ${BASH_SOURCE[0]})
-source util.sh
 
+source run_as_root.sh
+
+# environment setup
 echo "
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_STATE_HOME=$HOME/.local/state
-export XDG_CACHE_HOME=$HOME/.cache" >> $HOME/.bash_profile
+export XDG_CACHE_HOME=$HOME/.cache
 
-source $HOME/.bash_profile
+export SETUP_ROOT=$(pwd)" > .envrc
 
-run_sudo apt install -y software-properties-common build-essential
+run_as_root apt update && run_as_root apt install -y direnv
+eval "$(direnv hook bash)"
+direnv allow .
 
-# add ppas
-run_sudo add-apt-repository -y ppa:fish-shell/release-3
+if [ -z $XDG_DATA_HOME ] || [ -z $XDG_CONFIG_HOME ] || [ -z $XDG_STATE_HOME ] || [ -z $XDG_CACHE_HOME ]; then
+	echo "One or more XDG_ variables are not set"
+	exit 1
+fi
 
 # install packages
-run_sudo apt update && run_sudo apt install -y \
+run_as_root apt install -y software-properties-common build-essential
+run_as_root add-apt-repository -y ppa:fish-shell/release-3
+run_as_root apt update && run_as_root apt install -y \
 	curl \
  	wget \
  	htop \
@@ -34,17 +42,24 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 # manual build
 cd build
 ./tmux.sh
-./nvm.sh
 ./pyenv.sh
 cd ..
 
 ./dotfiles/link.fish
 
-echo "
-if [ -f $HOME/.bashrc ]; then
-    source $HOME/.bashrc
-fi
-" >> $HOME/.bash_profile
+# add terminal configurations
 
+# XDG Directory ENVs
+echo "
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_STATE_HOME=$HOME/.local/state
+export XDG_CACHE_HOME=$HOME/.cache" >> $HOME/.bashrc
+
+# Fish alias
 echo "
 alias f=$(which fish)" >> ~/.bashrc
+
+# direnv setup
+echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
+echo 'direnv hook fish | source' >> ~/.config/fish/config.fish

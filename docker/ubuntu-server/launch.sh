@@ -12,7 +12,9 @@ docker run -it \
     --gpus all \
     --shm-size=128g \
     --name ${NAME} \
-    -v /home/${USER}:/home/${USER} \
-    -v /data:/data \
+    -v /home/${USER}/workspace:/home/${USER}/workspace \
+    -v /home/${USER}/.cache:/home/${USER}/.cache \
+    -v /home/${USER}/.ssh:/home/${USER}/.ssh \
+    -v /home/${USER}/data:/data \
     -v /mnt:/mnt \
     ${IMAGE}:${TAG} bash

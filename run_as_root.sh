@@ -1,6 +1,6 @@
 #!/bin/bash
 
-run_sudo() {
+run_as_root() {
     if [ "$EUID" -ne 0 ]; then
         sudo "$@"
     else
@@ -8,4 +8,4 @@ run_sudo() {
     fi
 }
 
-export -f run_sudo
+export -f run_as_root
