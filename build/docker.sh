@@ -31,4 +31,6 @@ run_as_root docker run hello-world
 
 run_as_root groupadd -f docker
 run_as_root usermod -aG docker $USER
+newgrp docker
+
 run_as_root chown root:docker /var/run/docker.sock
