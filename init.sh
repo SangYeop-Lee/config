@@ -55,4 +55,3 @@ alias f=$(which fish)" >> ~/.bashrc
 
 # direnv setup
 echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
-echo 'direnv hook fish | source' >> ~/.config/fish/config.fish
