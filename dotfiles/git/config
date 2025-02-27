@@ -1,8 +1,10 @@
 [user]
 	email = ryan080198@gmail.com
 	name = Sangyeop Lee 
+	
 [github]
 	user = sangyeop-lee
+
 [alias]
 	c = commit
 	co = checkout
@@ -14,11 +16,45 @@
 	# https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
 	lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
 	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
-	lg = lg1
+	
+[column]
+	ui = auto
+
+[tag]
+	sort = version:refname
+
+[help]
+	autocorrect = promptlg = lg1
+
+[init]
+	defaultBranch = main
+
+[branch]
+	sort = -committerdate
 
 [pull]
 	ff = only
 
-[merge]
-	ff = no
-	commmit = no
+# [merge]
+# 	ff = no
+# 	commmit = no
+
+[commit]
+	verbose = true
+
+[push]
+	default = simple
+	autoSetupRemote = true
+	followTags = true
+
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+
