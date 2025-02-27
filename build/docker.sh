@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# XXX: consider using `curl -fsSL https://get.docker.com | sudo sh` instead
+
 # scripts from https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 cd $(dirname ${BASH_SOURCE[0]})
 source $SETUP_ROOT/run_as_root.sh
