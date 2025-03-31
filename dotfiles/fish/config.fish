@@ -8,7 +8,7 @@ setenv EDITOR nvim
 setenv NAME 'Sangyeop Lee'
 setenv EMAIL ryan080198@gmail.com
 
-for i in /usr/local/bin /opt/homebrew/bin ~/bin ~/.local/bin
+for i in /usr/local/bin /opt/homebrew/bin ~/bin ~/.local/bin ~/.cargo/bin
 	fish_add_path $i
 end
 
