@@ -35,6 +35,7 @@ abbr -a sp 'sudo pacman -Syu'
 abbr -a vnew 'python -m venv .venv'
 abbr -a vup 'source .venv/bin/activate.fish'
 abbr -a vdown deactivate
+abbr -a fd fdfind
 
 # to move up to top parent dir which is a repository
 function d
