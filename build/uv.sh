@@ -1,4 +1,4 @@
 #!/bin/bash
 
 curl -LsSf https://astral.sh/uv/install.sh | sh
-source $HOME/.local/share/../bin/env.fish
+echo 'uv generate-shell-completion fish | source' >> ~/.config/fish/completions/uv.fish
