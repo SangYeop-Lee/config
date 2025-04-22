@@ -2,3 +2,4 @@
 
 curl -LsSf https://astral.sh/uv/install.sh | sh
 echo 'uv generate-shell-completion fish | source' >> ~/.config/fish/completions/uv.fish
+echo 'uvx --generate-shell-completion fish | source' >> ~/.config/fish/completions/uvx.fish
