@@ -32,10 +32,26 @@ abbr -a ls 'ls --color'
 abbr -a ll 'ls -lh --color'
 abbr -a la 'ls -lah --color'
 abbr -a sp 'sudo pacman -Syu'
-abbr -a vnew 'python -m venv .venv'
+# abbr -a vnew 'uv venv --python'
 abbr -a vup 'source .venv/bin/activate.fish'
 abbr -a vdown deactivate
 abbr -a fd fdfind
+
+function vnew
+    if test (count $argv) -eq 0
+        echo "Usage: vnew <python-version>"
+        return 1
+    end
+
+    set ver $argv[1]
+    echo "Pinning python to $ver…"
+    uv python pin $ver; or return
+
+    echo "Creating venv with Python $ver…"
+    uv venv --python $ver; or return
+
+    echo "Done. Activated venv for Python $ver."
+end
 
 # to move up to top parent dir which is a repository
 function d
