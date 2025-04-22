@@ -35,7 +35,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 # manual build
 cd build
 ./tmux.sh
-./pyenv.sh
+./uv.sh
 cd ..
 
 ./dotfiles/link.fish
