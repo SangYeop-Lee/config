@@ -8,6 +8,7 @@ TAG=latest
 NAME="${MAINTAINER}_${IMAGE_NAME}"
 
 docker run -it \
+	--privileged \
     --net host \
     --gpus all \
     --shm-size=200g \
