@@ -15,4 +15,5 @@ docker run -it \
     -v ${HOME}/workspace:${HOME}/workspace \
     -v ${HOME}/.cache:${HOME}/.cache \
     -v ${HOME}/.ssh:${HOME}/.ssh \
+    -v /mnt:/mnt \
     ${IMAGE}:${TAG} bash

@@ -8,7 +8,7 @@ setenv EDITOR nvim
 setenv NAME 'Sangyeop Lee'
 setenv EMAIL ryan080198@gmail.com
 
-for i in /usr/local/bin /opt/homebrew/bin ~/bin ~/.local/bin
+for i in /usr/local/bin /opt/homebrew/bin ~/bin ~/.local/bin ~/.cargo/bin
 	fish_add_path $i
 end
 
@@ -35,6 +35,7 @@ abbr -a sp 'sudo pacman -Syu'
 abbr -a vnew 'python -m venv .venv'
 abbr -a vup 'source .venv/bin/activate.fish'
 abbr -a vdown deactivate
+abbr -a fd fdfind
 
 # to move up to top parent dir which is a repository
 function d

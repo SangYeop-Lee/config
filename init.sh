@@ -26,7 +26,8 @@ run_as_root apt install -y \
 	unzip \
 	fish \
 	neovim \
-	direnv
+	direnv \
+	fd-find
 
 # install vimplug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
